@@ -11,7 +11,7 @@ String.codepoints("abc") # This is faster, but is not good with some edge cases.
 
 ### RegEx in functions:
 
-```
+```.ex
 String.replace(s, ~r/!(?!!*$)/, "") # This removes exclamations except the last one
 ```
 
