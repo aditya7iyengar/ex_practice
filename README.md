@@ -3,7 +3,7 @@
 ## Strings
 
 ### To list:
-```
+```.ex
 String.split("abc", "", trim: true) # This is preferred.
 
 String.codepoints("abc") # This is faster, but is not good with some edge cases.
@@ -19,7 +19,7 @@ String.replace(s, ~r/!(?!!*$)/, "") # This removes exclamations except the last 
 
 ### Rotation:
 
-```
+```.ex
 def lrotate(list, 0), do: list
 def lrotate([head | list], number), do: lrotate(list ++ [head], number - 1)
 def rrotate(list, number) do
