@@ -1,5 +1,24 @@
 # My Elixir Notes/Tricks
 
+## Enums
+
+### Enum.reduce
+- enumerable: simply the list
+- accumulator: the value returned from first function is used as the accumulator for the next item of the enumerable (stores the state of previous iteration)
+- function: that is applied to every item in the enumerable
+
+The real fun in using Enum.reduce starts when you move beyond simply dealing with numbers as the accumulator. The accumulator can be any kind of value.
+For example Enum.map can be implemented as:
+
+```.ex
+def map(list, fun) do
+  Enum.reduce(list, [], fn(item, acc) ->
+    [fun.(item) | acc]
+  end)
+  |> Enum.reverse
+end
+```
+
 ## Strings
 
 ### To list:
