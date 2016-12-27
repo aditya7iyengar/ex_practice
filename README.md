@@ -7,7 +7,7 @@
 - `` String.codepoints("abc")
 
 ### RegEx in functions:
-- `` String.replace(s, ~r/!(?!!*$)/, "") # This removes exclamations except the last one
+- ``` String.replace(s, ~r/!(?!!*$)/, "") # This removes exclamations except the last one
 
 ## Lists
 
