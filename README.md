@@ -3,8 +3,11 @@
 ## Strings
 
 ### To list:
-``` String.split("abc", "", trim: true)
-``` String.codepoints("abc")
+```
+String.split("abc", "", trim: true) # This is preferred.
+
+String.codepoints("abc") # This is faster, but is not good with some edge cases.
+```
 
 ### RegEx in functions:
 
