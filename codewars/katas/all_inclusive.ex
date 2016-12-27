@@ -25,7 +25,6 @@
 
 # BEST SOLUTION:
 defmodule AllInclusive do
-
   def contain_all_rots("", _), do: true
   def contain_all_rots(string, list) do
     strings = MapSet.new(list)
@@ -38,7 +37,6 @@ end
 
 # MY SOLUTION:
 defmodule Allinclusive do
-
   def contain_all_rots("", _arr), do: true
   def contain_all_rots(strng, arr) do
     strng_as_list = String.split(strng, "", trim: true)
