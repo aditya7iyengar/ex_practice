@@ -19,6 +19,10 @@ def map(list, fun) do
 end
 ```
 
+- Usage: Something can be converted to enumerable to do iterations (for example, string)
+- Examples:
+  - codewars/katas/speed_control.ex
+
 ## Strings
 
 ### To list:
