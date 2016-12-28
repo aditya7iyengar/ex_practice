@@ -27,6 +27,7 @@
 # N/D as an integer: n (Ruby/Elixir/Clojure/Python/JS/CS/PHP)
 # Just "n" (Haskell), Some "n" (Haskell), "n" (Java, CSharp, TS), {n, 1} (C++).
 
+# MY SOLUTION
 defmodule Sumfracts do
   def sum_fracts(list) when (list == nil) do nil end
   def sum_fracts(list) when (list == []) do nil end
