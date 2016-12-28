@@ -94,3 +94,30 @@ defmodule Updown do
     [a | arrange_list([b | tail], !order)]
   end
 end
+
+# A CLEVER SOLUTION:
+defmodule Updown do
+  defp up([]) do [] end
+  defp up([x]) do [String.downcase(x)] end
+  defp up([x, y | xs]) do
+    if String.length(x) <= String.length(y) do
+      [String.downcase(x) | down([y | xs])]
+    else
+      [String.downcase(y) | down([x | xs])]
+    end
+  end
+  defp down([]) do [] end
+  defp down([x]) do [String.upcase(x)] end
+  defp down([x, y | xs]) do
+    if String.length(x) >= String.length(y) do
+      [String.upcase(x) | up([y | xs])]
+    else
+      [String.upcase(y) | up([x | xs])]
+    end
+  end
+
+  def arrange(strng) do
+    s = String.split(strng, " ")
+    Enum.join(up(s), " ")
+  end
+end

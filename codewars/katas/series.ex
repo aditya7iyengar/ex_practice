@@ -26,23 +26,13 @@ defmodule Series do
     n
     |> generate_numbers
     |> add_numbers
-    |> rounder
-  end
-
-  defp generate_numbers(n) do
-    for num <- 0..n - 1 do
-      1 / (1 + 3 * num)
-    end
-  end
-
-  defp add_numbers(list) do
-    Enum.reduce(list, 0, fn (x, acc) -> (x + acc)/1 end)
-  end
-
-  defp rounder(num) do
-    Float.round(num, 2)
+    |> Float.round(2)
     |> Float.to_string([decimals: 2])
   end
+
+  defp generate_numbers(n), do: for num <- 0..n - 1, do: 1 / (1 + 3 * num)
+
+  defp add_numbers(list), do: Enum.reduce(list, 0, fn (x, acc) -> (x + acc)/1 end)
 end
 
 # BEST SOLUTION:
