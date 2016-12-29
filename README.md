@@ -38,6 +38,12 @@ String.codepoints("abc") # This is faster, but is not good with some edge cases.
 String.replace(s, ~r/!(?!!*$)/, "") # This removes exclamations except the last one
 ```
 
+### Get all chars in a string
+
+```.ex
+String.graphemes("abca") # ['a', 'b', 'c', 'a']
+```
+
 ## Lists
 
 ### Rotation:
