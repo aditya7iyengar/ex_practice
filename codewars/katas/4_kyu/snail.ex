@@ -14,12 +14,12 @@
 # MY SOLUTION:
 defmodule Snail do
   def snail(matrix) when matrix == [] or length(length(matrix)) == 1, do: matrix
-  
+
   def snail([first_row | other]) do
     {second_row, other} = Enum.reduce(other, {[], []}, &rev_head_tail(&1, &2))
     Enum.concat([first_row, Enum.reverse(second_row), snail(other)])
   end
-  
+
   defp rev_head_tail(line, {heads, tails}) do
     [head | tail] = Enum.reverse(line)
     {[head | heads], [tail | tails]}
