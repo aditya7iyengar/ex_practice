@@ -125,7 +125,7 @@ defmodule PuzzleSolver do
   """
 
   # This implementation is should work for any grid size
-  @max_height 4
+  @max_height 6
 
   @doc """
   This function takes in a set of clues (integers) and returns a matrix/grid
