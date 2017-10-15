@@ -5,7 +5,7 @@ defmodule LargestInSeries do
   """
 
   # This solution should work for any length of sequence
-  @sequence 5
+  @sequence_length 5
 
   @doc """
   Public API for this module: This function gets the largest n-digit sequence
@@ -16,16 +16,15 @@ defmodule LargestInSeries do
     digits
     |> get_sequences()
     |> Enum.map(&String.to_integer(&1))
-    |> Enum.sort(& &1 <= &2)
-    |> Enum.at(0)
+    |> Enum.max
   end
 
   # This function gets a list of sequences in a given string
-  defp get_sequences(digits) do
+  defp get_sequences(digits, len \\ @sequence_length) do
     str_length = String.length(digits)
-    Enum.map((0..str_length - @sequence), &sequence(str, &1))
+    Enum.map((0..str_length - len), &sequence(digits, &1, len))
   end
 
-  # This function slices a given string at the give index based on sequence length
-  defp sequence(str, index), do: String.slice(str, index..index + @sequence - 1)
+  # This function slices a given string at the give index based on sequence length, len
+  defp sequence(str, index, len), do: String.slice(str, index..index + len - 1)
 end
