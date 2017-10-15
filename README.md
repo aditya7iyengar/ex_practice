@@ -68,4 +68,3 @@ end
   - codewars/katas/max_rot.ex,
   - codewars/katas/all_inclusive.ex
 
-
